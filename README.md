@@ -1,6 +1,6 @@
 # Caesar-Cypher-Python-Essentials-2-Lab
 
-The original Caesar cipher shifts each character by one: a becomes b, z becomes a, and so on.
+The first Caesar cipher shifts each character by one: a becomes b, z becomes a, and so on.
 
 Let's make it a bit harder, and allow the shifted value to come from the range 1..25 inclusive.
 
