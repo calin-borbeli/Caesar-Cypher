@@ -1,4 +1,5 @@
-# Caesar cipher.
+# Caesar cypher.
+print("Encrypting message")
 text = input("Enter your message: ")
 invalid_shift = True
 while invalid_shift:
@@ -6,10 +7,10 @@ while invalid_shift:
     if shift.isdigit() and int(shift) in range(1, 26):
         invalid_shift = False
 
-cipher = ""
+cypher = ""
 for char in text:
     if not char.isalpha():
-        cipher += char
+        cypher += char
         continue
     code = ord(char) + int(shift)
     if char.islower():
@@ -18,6 +19,25 @@ for char in text:
     else:
         if code > ord("Z"):
             code = code - 26
-    cipher += chr(code)
+    cypher += chr(code)
 
-print(cipher)
+print(cypher)
+
+# Caesar cypher - decrypting a message.
+print("Decrypting message")
+# cypher = input("Enter your cryptogram: ")
+text = ""
+for char in cypher:
+    if not char.isalpha():
+        text += char
+        continue
+    code = ord(char) - int(shift)
+    if char.islower():
+        if code < ord("a"):
+            code = code + 26
+    else:
+        if code < ord("A"):
+            code = code + 26
+    text += chr(code)
+
+print(text)
